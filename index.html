@@ -30,7 +30,7 @@
           <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
         </ul>
         <span class="navbar-text">
-          <a data-toggle="modal" data-target="#loginModal" href="">
+          <a class="btn" id="loginButton">
             <span class="fa fa-sign-in"></span> Login
         </a>
         </span>
@@ -76,7 +76,7 @@
     </div>
   </div>
 
-  <div id="reservetable" class="modal fade" role="dialog">
+  <div id="reserveModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg" role="content">
       <div class="modal-content">
         <div class="modal-header">
@@ -159,7 +159,7 @@
           <img src="img/logo.png" alt="logo">
         </div>
         <div class="col-12 col-sm align-self-center">
-          <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#reservetable">Reserve a Table</button>
+          <button id="reserveButton" type="button" class="btn btn-warning">Reserve a Table</button>
         </div>
       </div>
     </div>
@@ -258,66 +258,6 @@
     </div>
   </div>
 
-  <div class="row mt-3 mb-3">
-    <div class="col-sm-8 col-12 offset-sm-2">
-      <div class="card">
-        <div class="card-header">
-          <h1>Reserve a Table</h1>
-        </div>
-        <div class="card-body">
-          <form>
-            <div class="form-group row">
-              <label for="numguest" class="col-3 col-form-label">Number of Guests</label>
-              <div class="col-9">
-                <div class="row">
-                  <div class="form-check col-1">
-                    <input type="radio" class="form-check-input" id="one" name="numguest">
-                    <label for="one" class="form-check-label">1</label>
-                  </div>
-                  <div class="form-check col-1">
-                    <input type="radio" class="form-check-input" id="two" name="numguest">
-                    <label for="two" class="form-check-label">2</label>
-                  </div>
-                  <div class="form-check col-1">
-                    <input type="radio" class="form-check-input" id="three" name="numguest">
-                    <label for="three" class="form-check-label">3</label>
-                  </div>
-                  <div class="form-check col-1">
-                    <input type="radio" class="form-check-input" id="four" name="numguest">
-                    <label for="four" class="form-check-label">4</label>
-                  </div>
-                  <div class="form-check col-1">
-                    <input type="radio" class="form-check-input" id="five" name="numguest">
-                    <label for="five" class="form-check-label">5</label>
-                  </div>
-                  <div class="form-check col-1">
-                    <input type="radio" class="form-check-input" id="six" name="numguest">
-                    <label for="six" class="form-check-label">6</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="datetime" class="col-3 col-form-label">Date and Time</label>
-              <div class="col-4">
-                <input type="text" class="form-control" id="date" name="date" placeholder="Date">
-              </div>
-              <div class="col-4">
-                <input type="text" class="form-control" id="time" name="time" placeholder="Time">
-              </div>
-            </div>
-            <div class="form-group row">
-              <div class="offset-3 col-9">
-                <button type="submit" class="btn btn-primary">
-                  Reserve
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <footer class="footer">
     <div class="container">
@@ -378,6 +318,12 @@
           $("#carouselButton").children("span").removeClass("fa-play");
           $("#carouselButton").children("span").addClass("fa-pause");
         }
+      });
+      $("#loginButton").click(function(){
+        $("#loginModal").modal("toggle");
+      });
+      $("#reserveButton").click(function(){
+        $("#reserveModal").modal("toggle");
       });
     });
   </script>
